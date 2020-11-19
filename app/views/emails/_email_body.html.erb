@@ -1,8 +1,10 @@
 <div class="container">
-  <div class="card">
-    <h6 class="card-header">OBJET : <%= email.object %></h6>
+  <div class="card-email mt-2">
+    <h6 class="card-email-header"><strong>OBJET : <%= email.object %></strong></h6><hr>
+
+        <p style="font-size:13px" class="ml-3 mr-3"><strong>De: <%=email.sender %></strong><small class="font-italic float-right" style="color: gray">Reçu le: <%=email.created_at.time.strftime("%-d/%-m/%y") %> à <%= email.created_at.time.strftime("%H:%M")%></small></p>
       <div class="card-body read">
-      <blockquote class="blockquote mb-0">
+      <blockquote class="blockquote mb-0 mt-0">
         <p><small><%= email.body %><small></p>
 
 	        <%= link_to email_path(email.id), method: :put, :remote => true do %>
@@ -17,7 +19,6 @@
 	        <%= link_to email_path(email.id), method: :delete, data: { confirm: "Voulez-vous supprimer cet email ?", :remote => true } do %>
 	        	<i class="far fa-trash-alt float-right mt-2" style="color: red; font-size: 20px;"></i>
           <%end%>
-<div class="font-italic" style="color: gray"><small>Reçu: <%=email.created_at.time.strftime("%-d/%-m/%y") %> à <%= email.created_at.time.strftime("%H:%M")%></small>
       </blockquote>
     </div>
   </div>

@@ -6,13 +6,14 @@
 <%end%>
 </div>
 
-<div class="d-flex justify-content-between mt-5">
-  <div class="col-6" style="overflow:scroll; height:400px">
+<div class="d-flex justify-content-between m-3">
+  <div class="col-7" style="overflow:scroll; height:400px">
 <table class="table">
   <thead>
     <tr>
-      <th scope="col-1" class="pl-3" width='15%'>Reçu le</th>
-      <th scope="col" width='20%'>Objet</th>
+      <th scope="col-1" style="width: 7%;">Date</th>
+      <th scope="col-2" style="width: 17%;">Expéditeur</th>
+      <th scope="col-2" style="width: 17%;">Objet</th>
     </tr>
   </thead>
   <tbody>
@@ -20,14 +21,16 @@
           <% if email.read == false %>
         <tr id="email_<%= email.id%>">
 		      <th scope="row"><small><strong><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></strong></small></th>
-		      <td id="<%=email.id%>" class="text-center">
+          <td style="font-size: 14px" class="pt-3"><strong><%=email.sender%><strong></td>
+		      <td style="font-size: 14px" class="pt-3" id="<%=email.id%>">
             <%= link_to email.object, email_path(email.id), class: "font-weight-bold text-dark", :remote => :true %>
 		      </td>
 		    </tr>
         <%else%>
         <tr id="email_<%= email.id%>">
         <th scope="row"><small><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></small></th>
-        <td id="<%=email.id%>" class="text-center">
+        <td style="font-size: 14px" class="pt-3"><%=email.sender%></td>
+        <td style="font-size: 14px" class="pt-3" id="<%=email.id%>">
           <%= link_to email.object, email_path(email.id), class: "text-dark", :remote => :true %>
         </td>
 
@@ -39,7 +42,7 @@
 </table>
 </div>
 
-  <div class="col-6">
+  <div class="col-5">
     <table class="table">
       <thead>
         <tr>
@@ -47,7 +50,7 @@
     </tr>
   </thead>
     <tbody>
-      <td id="selected-email">
+      <td id="selected-email" class="selected-mail">
       </td>
     </tbody>
   </table>

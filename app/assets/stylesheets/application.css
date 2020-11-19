@@ -95,15 +95,32 @@ input[type=checkbox] {
 thead, tbody { display: block; }
 
 tbody {
-    height: 300px;       /* Just for the demo          */
+    height: 330px;       /* Just for the demo          */
     overflow-y: auto;    /* Trigger vertical scroll    */
     overflow-x: hidden;  /* Hide the horizontal scroll */
 }
 
 tbody td {
-    width: 500px;
+    width: 298px;
 }
 
 thead th {
-  width: 500px;
+  width: 550px;
+}
+
+.selected-mail {
+  width: 550px;
+}
+
+.card-email {
+  border:none;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+
+}
+
+.card-email-header {
+  background-color: white;
+  padding-top:15px;
+  padding-left: 15px;
+
 }

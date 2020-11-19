@@ -4,7 +4,7 @@ class EmailsController < ApplicationController
   end
 
 def create
-  	@email = Email.create(object: Faker::TvShows::GameOfThrones.city, body: Faker::TvShows::GameOfThrones.quote)
+  	@email = Email.create(object: Faker::TvShows::GameOfThrones.city, body: Faker::TvShows::GameOfThrones.quote, sender: Faker::TvShows::GameOfThrones.character)
 		respond_to do |format|
       format.html {redirect_to root_path}
       format.js {}

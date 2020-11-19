@@ -11,18 +11,6 @@
       <li class="nav-item">
         <%= link_to "YouveGotMail", emails_path, class: "nav-link", style: "color:#5680CA" %>
       </li>
-      <% unless user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
-      </li>
-      <% else %>
-      <li class="nav-item">
-        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      </li>
-      <% end %>
 
     </ul>
         <img class="rounded-circle" height="50px" width="50px" src="https://i.etsystatic.com/20732132/r/il/38646f/2050716350/il_794xN.2050716350_saap.jpg">
