@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  status: 
+  deadline: 2020-11-18 13:45:32
+
+two:
+  title: MyString
+  status: 
+  deadline: 2020-11-18 13:45:32

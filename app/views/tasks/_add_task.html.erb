@@ -1,0 +1,10 @@
+<div id="task_<%= task.id%>">
+  <div class="card-task p-2 m-2">
+  <strong><%= task.title  %></strong><br>
+  <% unless task.deadline.nil? %>
+    <div class="font-italic" style="color: gray"><small>A finir avant: <%= task.deadline.strftime('%D')  %></small>
+    <% end %>
+    <%= link_to task_path(task.id), method: :delete, data: { confirm: "Voulez-vous supprimer cette tâche ?" }, remote: true do %> <i class="far fa-trash-alt float-right" style="color: red"></i>
+    <%end%></div>
+       <%= check_box_tag :task, task.status, task.status , data: { remote: true, url: task_path(task), params: { id: task.id, origin: "checkbox"}.to_param, method: "put" }%> Tâche terminée
+       </div></div>

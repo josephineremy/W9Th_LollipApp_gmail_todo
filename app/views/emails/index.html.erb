@@ -1,0 +1,55 @@
+<%= render 'emails/jumbotron'  %>
+
+<div class="pl-5"><h1>Hey ! You've got mail ! </h1><br>
+<%= link_to emails_path, :action => :create, :method => :post, :remote => :true do %>
+   <input class="btn float" type="submit" value="Recevoir un email">
+<%end%>
+</div>
+
+<div class="d-flex justify-content-between mt-5">
+  <div class="col-6" style="overflow:scroll; height:400px">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col-1" class="pl-3" width='15%'>Reçu le</th>
+      <th scope="col" width='20%'>Objet</th>
+    </tr>
+  </thead>
+  <tbody>
+  	 <% @emails.sort.reverse.each do |email|  %>
+          <% if email.read == false %>
+        <tr id="email_<%= email.id%>">
+		      <th scope="row"><small><strong><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></strong></small></th>
+		      <td id="<%=email.id%>" class="text-center">
+            <%= link_to email.object, email_path(email.id), class: "font-weight-bold text-dark", :remote => :true %>
+		      </td>
+		    </tr>
+        <%else%>
+        <tr id="email_<%= email.id%>">
+        <th scope="row"><small><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></small></th>
+        <td id="<%=email.id%>" class="text-center">
+          <%= link_to email.object, email_path(email.id), class: "text-dark", :remote => :true %>
+        </td>
+
+		    </tr>
+        <% end %>
+     <% end %>
+
+  </tbody>
+</table>
+</div>
+
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+      <th scope="col">Email sélectionné</th>
+    </tr>
+  </thead>
+    <tbody>
+      <td id="selected-email">
+      </td>
+    </tbody>
+  </table>
+        </div>
+</div>

@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* @import "variables/personal_variables";
+ @import "variables/bootstrap_variables"; */
+
+
+ .card {
+   position: relative;
+   display: -ms-flexbox;
+   margin: 0 auto;
+   display: flex;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   min-width: 0;
+   word-wrap: break-word;
+   background-color: #fff;
+   background-clip: border-box;
+   border: 1px solid rgba(0, 0, 0, 0.125);
+   border-radius: 0.5rem;
+ }
+
+
+.card-create {
+  background-color: #A9A9A9;
+  border-radius: 0.5rem;
+}
+
+.card-task {
+  background-color: 	#F5F5F5;
+  border-radius: 0.25rem;
+}
+
+input[type=checkbox] {
+         position: relative;
+	       cursor: pointer;
+         margin-right: 4px;
+    }
+    input[type=checkbox]:before {
+         content: "";
+         display: block;
+         position: absolute;
+         width: 16px;
+         height: 16px;
+         top: 0;
+         left: 0;
+         border: 1px solid #A9A9A9;
+         border-radius: 3px;
+         background-color: white;
+         margin-right: 4px;
+}
+    input[type=checkbox]:checked:after {
+         content: "";
+         display: block;
+         width: 5px;
+         height: 10px;
+         border: solid gray;
+         border-width: 0 2px 2px 0;
+         -webkit-transform: rotate(45deg);
+         -ms-transform: rotate(45deg);
+         transform: rotate(45deg);
+         position: absolute;
+         top: 2px;
+         left: 6px;
+         margin-right: 4px;
+}
+
+.btn {
+  background-color: #5680CA;
+  border: gray;
+  color: white;
+}
+
+.btn:hover{
+  background-color: #3E6AB9 ;
+  color: white;
+}
+
+.btn:active {
+  box-shadow: 5px;
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height: 300px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+
+tbody td {
+    width: 500px;
+}
+
+thead th {
+  width: 500px;
+}

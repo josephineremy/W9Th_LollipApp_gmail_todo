@@ -1,0 +1,5 @@
+alert("Le mail a bien été supprimé")
+var emailtoDelete = document.getElementById("email_<%= @email.id%>");
+emailtoDelete.remove()
+var selectedEmail = document.getElementById("selected-email");
+selectedEmail.innerHTML = ""

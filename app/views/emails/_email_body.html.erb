@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card">
+    <h6 class="card-header">OBJET : <%= email.object %></h6>
+      <div class="card-body read">
+      <blockquote class="blockquote mb-0">
+        <p><small><%= email.body %><small></p>
+
+	        <%= link_to email_path(email.id), method: :put, :remote => true do %>
+
+            <%if email.read%>
+              <button type="button" class="btn btn-sm"><i class="far fa-envelope"></i> Marquer comme non lu</button>
+            <% else%>
+              <button type="button" class="btn btn-sm"><i class="far fa-envelope-open"></i> Marquer comme lu</button>
+            <%end%>
+          <%end%>
+
+	        <%= link_to email_path(email.id), method: :delete, data: { confirm: "Voulez-vous supprimer cet email ?", :remote => true } do %>
+	        	<i class="far fa-trash-alt float-right mt-2" style="color: red; font-size: 20px;"></i>
+          <%end%>
+<div class="font-italic" style="color: gray"><small>Reçu: <%=email.created_at.time.strftime("%-d/%-m/%y") %> à <%= email.created_at.time.strftime("%H:%M")%></small>
+      </blockquote>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <%= link_to "Lollip'App", root_path, class: "navbar-brand" %>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <%= link_to "ToDoGist", tasks_path, class: "nav-link", style: "color:#5680CA" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "YouveGotMail", emails_path, class: "nav-link", style: "color:#5680CA" %>
+      </li>
+      <% unless user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+      <% end %>
+
+    </ul>
+        <img class="rounded-circle" height="50px" width="50px" src="https://i.etsystatic.com/20732132/r/il/38646f/2050716350/il_794xN.2050716350_saap.jpg">
+  </div>
+</nav>

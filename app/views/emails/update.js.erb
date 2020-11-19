@@ -1,0 +1,4 @@
+var selectedEmail = document.getElementById("selected-email");
+selectedEmail.innerHTML = "<%= j render 'email_body', email: @email %>"
+var emailLine = document.getElementById("email_<%= @email.id%>")
+emailLine.innerHTML = "<%= j render 'email', email: @email %>"
