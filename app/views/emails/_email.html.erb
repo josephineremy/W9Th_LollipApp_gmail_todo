@@ -1,16 +1,16 @@
 <% if email.read == false %>
-<tr id="email_<%= email.id%>">
-<th scope="row"><small><strong><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></strong></small></th>
-<td style="font-size: 14px" class="pt-3"><strong><%=email.sender%></strong></td>
-<td style="font-size: 14px" class="pt-3" id="<%=email.id%>">
+<tr id="email_<%= email.id%>" style="line-height:1">
+<th scope="row" style="background-color: white"><small><strong><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></strong></small></th>
+<td style="font-size: 14px; background-color: white" class="pt-3"><strong><%=email.sender%><strong></td>
+<td style="font-size: 14px; background-color: white" class="pt-3" id="<%=email.id%>">
   <%= link_to email.object, email_path(email.id), class: "font-weight-bold text-dark", :remote => :true %>
 </td>
 </tr>
 <%else%>
-<tr id="email_<%= email.id%>">
-<th scope="row"><small><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></small></th>
-<td style="font-size: 14px" class="pt-3"><%=email.sender%></td>
-<td style="font-size: 14px" class="pt-3" id="<%=email.id%>">
+<tr id="email_<%= email.id%>" style="line-height:1">
+<th scope="row" style="background-color: #F5F5F5"><small><%=email.created_at.time.strftime("%-d/%-m/%y à %H:%M") %></small></th>
+<td style="font-size: 14px; background-color: #F5F5F5" class="pt-3"><%=email.sender%></td>
+<td style="font-size: 14px; background-color: #F5F5F5" class="pt-3" id="<%=email.id%>">
 <%= link_to email.object, email_path(email.id), class: "text-dark", :remote => :true %>
 </td>
 
