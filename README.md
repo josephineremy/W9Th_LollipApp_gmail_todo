@@ -1,24 +1,9 @@
-# README
+## Présentation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Coucou, voilà le site Lollip'App dans lequel tu pourras retrouver le travail sur la ToDoList et le GmailLike en AJAX.<br>
 
-Things you may want to cover:
+## Instructions
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Alors, tu as deux choix:<br>
+<li>Soit tu cliques sur le lien suivant: https://lollipapp-thp.herokuapp.com/<br>
+  <li>Soit tu fais les démarches habituelles: <br>
